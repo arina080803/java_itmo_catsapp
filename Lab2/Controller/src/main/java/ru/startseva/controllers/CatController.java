@@ -1,4 +1,4 @@
-package main.java.ru.startseva.controllers;
+package ru.startseva.controllers;
 
 import ru.startseva.dtos.CatDto;
 import ru.startseva.services.CatService;

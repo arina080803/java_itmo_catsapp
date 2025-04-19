@@ -14,11 +14,11 @@ public class OwnerMapper {
     }
 
     public static OwnerDto ownerEntityToDto(Owner owner) {
-        return new OwnerDto(owner.getOwnerID(), owner.getName(), owner.getBirthDay(), ownerCatsToDto(owner.getCats()));
+        return new OwnerDto(owner.getOwnerID(), owner.getOwnerName(), owner.getOwnerBirthDay(), ownerCatsToDto(owner.getCats()));
     }
 
     public static OwnerDto ownerWithoutCats(Owner owner) {
-        return new OwnerDto(owner.getOwnerID(), owner.getName(), owner.getBirthDay());
+        return new OwnerDto(owner.getOwnerID(), owner.getOwnerName(), owner.getOwnerBirthDay());
     }
 
     public static List<CatDto> ownerCatsToDto(List<Cat> cats) {

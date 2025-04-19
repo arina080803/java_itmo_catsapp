@@ -35,7 +35,7 @@ public class Cat {
             inverseJoinColumns = @JoinColumn(name = "FriendID"))    
     private List<Cat> friends;
 
-    public Cat(String name, LocalDate birthDay, CatColor color, String breed) {
+    public Cat(String name, LocalDate birthDay, String breed, CatColor color) {
         this.Name = name;
         this.BirthDay = birthDay;
         this.Color = color;

@@ -18,13 +18,13 @@ public class CatDto {
     private OwnerDto Owner;
     private List<CatDto> friends;
 
-    // public CatDto(String name, LocalDate birthDay, String breed, CatColor color) {
-    //     this.Name = name;
-    //     this.BirthDay = birthDay;
-    //     this.Breed = breed;
-    //     this.Color = color;
-    //     this.Owner = null;
-    // }
+    public CatDto(String name, LocalDate birthDay, String breed, CatColor color) {
+        this.Name = name;
+        this.BirthDay = birthDay;
+        this.Breed = breed;
+        this.Color = color;
+        this.Owner = null;
+    }
 
     public CatDto(int catID, String name, LocalDate birthDay, String breed, CatColor color, OwnerDto owner) {
         this.CatID = catID;

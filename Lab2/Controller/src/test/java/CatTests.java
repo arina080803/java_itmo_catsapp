@@ -47,7 +47,7 @@ public class CatTests {
     @Test
     public void testAllCats() {
         List<Cat> expectedCats = new ArrayList<>();
-        Cat cat1 = new Cat("Kitty", LocalDate.now(), "Persian", CatColor.Black);
+        Cat cat1 = new Cat("Kitty", LocalDate.now(), "Persian", CatColor.Pink);
         Cat cat2 = new Cat("Tom", LocalDate.now(), "Siamese", CatColor.White);
         cat1.setCatID(1);
         cat2.setCatID(2);
@@ -66,7 +66,7 @@ public class CatTests {
 
     @Test
     public void testAddCatFriend() {
-        Cat cat1 = new Cat("Kitty", LocalDate.now(), "Persian", CatColor.Black);
+        Cat cat1 = new Cat("Kitty", LocalDate.now(), "Persian", CatColor.Pink);
         Cat cat2 = new Cat("Tom", LocalDate.now(), "Siamese", CatColor.White);
         cat1.setCatID(1);
         cat2.setCatID(2);
@@ -84,8 +84,8 @@ public class CatTests {
     @Test
     public void testAllOwners() {
         List<Owner> expectedOwners = new ArrayList<>();
-        Owner owner1 = new Owner("Emil", LocalDate.now());
-        Owner owner2 = new Owner("Misha", LocalDate.now());
+        Owner owner1 = new Owner("Arina", LocalDate.now());
+        Owner owner2 = new Owner("Polina", LocalDate.now());
         owner1.setOwnerID(1);
         owner2.setOwnerID(2);
         expectedOwners.add(owner1);
@@ -95,8 +95,8 @@ public class CatTests {
         List<OwnerDto> actualOwners = ownerController.getAllOwners();
 
         assertEquals(expectedOwners.size(), actualOwners.size());
-        assertEquals(owner1.getName(), actualOwners.get(0).getName());
-        assertEquals(owner2.getName(), actualOwners.get(1).getName());
+        assertEquals(owner1.getOwnerName(), actualOwners.get(0).getName());
+        assertEquals(owner2.getOwnerName(), actualOwners.get(1).getName());
 
         verify(catOwnerDAO, times(1)).getAllOwners();
     }

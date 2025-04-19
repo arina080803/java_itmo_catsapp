@@ -9,7 +9,7 @@ public class Hibernate {
     private final static EntityManagerFactory entityManagerFactory = initEntityManagerFactory();
 
     private static EntityManagerFactory initEntityManagerFactory() {
-        return Persistence.createEntityManagerFactory("ru.hodzhakhov.DAO.jpa");
+        return Persistence.createEntityManagerFactory("ru.startseva.DAO.jpa");
     }
 
     public static void close() {

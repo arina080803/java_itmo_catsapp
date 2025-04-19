@@ -42,8 +42,8 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public void updateOwner(int id, OwnerDto ownerDto) {
         Owner owner = ownerDAO.getOwnerById(id);
-        owner.setName(ownerDto.getName());
-        owner.setBirthDay(ownerDto.getBirthDay());
+        owner.setOwnerName(ownerDto.getName());
+        owner.setOwnerBirthDay(ownerDto.getBirthDay());
         ownerDAO.updateOwner(owner);
     }
 

@@ -1,11 +1,11 @@
-package main.java.ru.startseva;
+package ru.startseva;
 
 import ru.startseva.controllers.CatController;
 import ru.startseva.controllers.OwnerController;
 import ru.startseva.dao.CatDAO;
-import ru.startseva.dao.CatImplDAO;
+import ru.startseva.dao.CatDAOImpl;
 import ru.startseva.dao.OwnerDAO;
-import ru.startseva.dao.OwnerImplDAO;
+import ru.startseva.dao.OwnerDAOImpl;
 import ru.startseva.dtos.CatDto;
 import ru.startseva.dtos.OwnerDto;
 import ru.startseva.models.CatColor;
@@ -19,15 +19,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        CatDAO catDAO = new CatImplDAO();
-        OwnerDAO catOwnerDAO = new OwnerImplDAO();
+        CatDAO catDAO = new CatDAOImpl();
+        OwnerDAO catOwnerDAO = new OwnerDAOImpl();
         CatService catService = new CatServiceImpl(catDAO);
         OwnerService catOwnerService = new OwnerServiceImpl(catOwnerDAO, catDAO);
         CatController catController = new CatController(catService);
         OwnerController ownerController = new OwnerController(catOwnerService);
         OwnerDto owner = new OwnerDto("Arina", LocalDate.now());
         CatDto cat1 = new CatDto("Coffi", LocalDate.now(), "xz", CatColor.Pink);
-        CatDto cat2 = new CatDto("Cat", LocalDate.now(), "xz", CatColor.White);
+        CatDto cat2 = new CatDto("Lara", LocalDate.now(), "xz", CatColor.White);
         catController.addCat(cat1);
         catController.addCat(cat2);
         catController.addFriend(1, 2);
