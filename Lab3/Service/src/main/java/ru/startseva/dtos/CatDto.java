@@ -2,6 +2,7 @@ package ru.startseva.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import ru.startseva.entities.CatColor;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class CatDto {
     private int CatID;
     private String Name;

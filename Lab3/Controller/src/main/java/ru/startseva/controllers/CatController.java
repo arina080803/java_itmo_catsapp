@@ -1,38 +1,59 @@
 package ru.startseva.controllers;
 
 import ru.startseva.dtos.CatDto;
+import ru.startseva.entities.CatColor;
 import ru.startseva.services.CatService;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("api/cats")
 public class CatController {
     private final CatService catService;
 
+    @Autowired
     public CatController(CatService catService) {
         this.catService = catService;
     }
 
-    public List<CatDto> getAllCats() {
+    @GetMapping("")
+    public List<CatDto> getAllCats(@RequestParam(value = "color", required = false) CatColor color) {
+        if (color != null) {
+            return catService.getCatsByColor(color);
+        }
         return catService.getAllCats();
     }
 
-    public CatDto getCatById(int id) {
+    @GetMapping("/{id}")
+    public CatDto getCatById(@PathVariable("id") int id) {
         return catService.getCatById(id);
     }
 
-    public void addCat(CatDto cat) {
+    @PostMapping("")
+    public void addCat(@RequestBody CatDto cat) {
         catService.addCat(cat);
     }
 
-    public void updateCat(int id, CatDto cat) {
+    @PutMapping("/{id}")
+    public void updateCat(@PathVariable("id") int id, @RequestBody CatDto cat) {
         catService.updateCat(id, cat);
     }
 
-    public void deleteCat(int catId) {
+    @DeleteMapping("/{id}")
+    public void deleteCat(@PathVariable("id") int catId) {
         catService.deleteCat(catId);
     }
 
-    public void addFriend(int catId, int friendId) {
+    @PostMapping("/{id}/friend")
+    public void addFriend(@PathVariable("id") int catId, @RequestParam("friendId") int friendId) {
         catService.addFriend(catId, friendId);
+    }
+
+    @DeleteMapping("/{id}/friend")
+    public void removeFriend(@PathVariable("id") int catId, @RequestParam("friendId") int friendId) {
+        catService.deleteFriend(catId, friendId);
     }
 }
