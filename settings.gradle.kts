@@ -13,3 +13,5 @@ include("Lab3:Service")
 findProject(":Lab3:Service")?.name = "Service"
 include("Lab3:Controller")
 findProject(":Lab3:Controller")?.name = "Controller"
+include("Lab3:Security")
+findProject(":Lab3:Security")?.name = "Security"

@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository;
 import ru.startseva.entities.Owner;
 
 @Repository
-public interface OwnerRepository extends JpaRepository<Owner, Integer> {
-}
+public interface OwnerRepository extends JpaRepository<Owner, Integer> {}

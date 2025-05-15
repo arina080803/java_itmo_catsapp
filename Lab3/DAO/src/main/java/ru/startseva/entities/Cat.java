@@ -1,46 +1,48 @@
 package ru.startseva.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Cat", schema = "public", catalog = "postgres")
-@Setter
-@Getter
+@Table(name = "Cat")
+@Data
 @NoArgsConstructor
 public class Cat {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CatID", nullable = false)
-    private int CatID;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "CatID", nullable = false)
+  private int CatID;
 
-    private String name;
-    private LocalDate birthDay;
-    private CatColor color;
-    private String breed;
+  private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "OwnerID")
-    private Owner Owner;
+  private LocalDate BirthDay;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "CatFriends", schema = "public", catalog = "postgres",
-            joinColumns = @JoinColumn(name = "CatID"),
-            inverseJoinColumns = @JoinColumn(name = "FriendID"))    
-    private List<Cat> friends;
+  private String breed;
 
-    public Cat(String name, LocalDate birthDay, String breed, CatColor color) {
-        this.name = name;
-        this.birthDay = birthDay;
-        this.color = color;
-        this.breed = breed;
-        this.Owner = null;
-        this.friends = new ArrayList<>();
-    }
+  private CatColor color;
+
+  @ManyToOne
+  @JoinColumn(name = "OwnerID")
+  private Owner owner;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(
+      name = "cat_friends",
+      joinColumns = @JoinColumn(name = "CatID"),
+      inverseJoinColumns = @JoinColumn(name = "FriendID"))
+  private List<Cat> friends;
+
+  public Cat(String name, LocalDate birthDay, String breed, CatColor color) {
+    this.name = name;
+    this.BirthDay = birthDay;
+    this.breed = breed;
+    this.color = color;
+    this.friends = new ArrayList<>();
+    this.owner = null;
+  }
 }
