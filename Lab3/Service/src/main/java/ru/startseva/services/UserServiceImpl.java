@@ -30,8 +30,10 @@ public class UserServiceImpl implements UserService {
   @Override
   @Transactional
   public void addUser(UserDto userDto) {
+    System.out.println(userDto.getRoles());
     userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
     User user = UserMapper.userDtoToEntity(userDto);
+    System.out.println(user.getRoles());
     if (userRepository.findByUsername(user.getUsername()) != null) {
       return;
     }

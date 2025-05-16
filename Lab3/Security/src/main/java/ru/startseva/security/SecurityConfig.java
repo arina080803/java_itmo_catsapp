@@ -25,42 +25,43 @@ import ru.startseva.services.UserDetailsServiceImpl;
 @EnableMethodSecurity
 @ComponentScan("ru.startseva.services")
 public class SecurityConfig {
-  private final UserDetailsServiceImpl userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
 
-  @Autowired
-  public SecurityConfig(UserDetailsServiceImpl userDetailsService) {
-    this.userDetailsService = userDetailsService;
-  }
+    @Autowired
+    public SecurityConfig(UserDetailsServiceImpl userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
-  @Bean
-  public UserDetailsService userDetailsService() {
-    return this.userDetailsService;
-  }
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return this.userDetailsService;
+    }
 
-  @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http.csrf(AbstractHttpConfigurer::disable)
-        .cors(AbstractHttpConfigurer::disable)
-        .authorizeHttpRequests(
-            auth ->
-                auth.requestMatchers("api/users/**").hasRole("ADMIN").anyRequest().authenticated())
-        .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
-        .logout(LogoutConfigurer::permitAll)
-        .httpBasic(withDefaults());
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(AbstractHttpConfigurer::disable)
+                .cors(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(
+                        auth -> auth.requestMatchers("api/users/registration").permitAll()
+                                .requestMatchers("api/users/**").hasRole("ADMIN")
+                                .anyRequest().authenticated())
+                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
+                .logout(LogoutConfigurer::permitAll)
+                .httpBasic(withDefaults());
 
-    return http.build();
-  }
+        return http.build();
+    }
 
-  @Bean
-  public AuthenticationProvider authenticationProvider() {
-    DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-    provider.setUserDetailsService(this.userDetailsService);
-    provider.setPasswordEncoder(passwordEncoder());
-    return provider;
-  }
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(this.userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
+    }
 
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }

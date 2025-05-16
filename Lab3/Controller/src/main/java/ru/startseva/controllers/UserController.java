@@ -17,6 +17,7 @@ public class UserController {
 
     @PostMapping("/registration")
     public void userRegistration(@RequestBody UserDto userDto) {
+        System.out.println(userDto.getRoles());
         userService.addUser(userDto);
     }
 

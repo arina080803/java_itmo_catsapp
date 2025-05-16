@@ -34,6 +34,7 @@ public class CatController {
 
     @PostMapping("")
     public void addCat(@RequestBody CatDto cat) {
+        System.out.println(cat.getName());
         catService.addCat(cat);
     }
 

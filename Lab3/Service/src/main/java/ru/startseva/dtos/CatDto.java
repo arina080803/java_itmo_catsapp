@@ -1,6 +1,7 @@
 package ru.startseva.dtos;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ru.startseva.entities.CatColor;
@@ -8,12 +9,16 @@ import ru.startseva.entities.CatColor;
 import java.time.LocalDate;
 import java.util.List;
 
-@Getter
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CatDto {
     private int CatID;
     private String Name;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private LocalDate BirthDay;
     private String Breed;
     private CatColor Color;

@@ -42,7 +42,9 @@ public class CatServiceImpl implements CatService {
     @Override
     @Transactional
     public void addCat(CatDto catDto) {
-        catRepository.save(CatMapper.catDtoToEntity(catDto));
+        Cat cat = CatMapper.catDtoToEntity(catDto);
+        System.out.println(cat.getName());
+        catRepository.save(cat);
     }
 
     @Override
