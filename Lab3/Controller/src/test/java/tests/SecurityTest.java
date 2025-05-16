@@ -52,7 +52,7 @@ public class SecurityTest {
     OwnerDto ownerDto = new OwnerDto("Arina", LocalDate.now());
     this.mockMvc
         .perform(
-            post("/api/owners")
+            post("/api/owners/add")
                 .contentType(APPLICATION_JSON_UTF8)
                 .content(ow.writeValueAsString(ownerDto)))
         .andExpect(status().isOk());

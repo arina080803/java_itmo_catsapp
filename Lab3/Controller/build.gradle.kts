@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     implementation(project(":Lab3:Service"))
+    implementation(project(":Lab3:Security"))
     implementation(project(":Lab3:DAO"))
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
