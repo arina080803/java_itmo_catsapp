@@ -47,7 +47,7 @@ public class SecurityTest {
   }
 
   @Test
-  @WithMockUser(roles = {"ADMIN"})
+  @WithMockUser(roles = {"ROLE_ADMIN"})
   public void testAddingOwner() throws Exception {
     OwnerDto ownerDto = new OwnerDto("Arina", LocalDate.now());
     this.mockMvc

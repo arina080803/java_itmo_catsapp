@@ -4,6 +4,7 @@ import ru.startseva.dtos.CatDto;
 import ru.startseva.entities.CatColor;
 import ru.startseva.services.CatService;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +40,8 @@ public class CatController {
     }
 
     @PutMapping("/{id}")
-    public void updateCat(@PathVariable("id") int id, @RequestBody CatDto cat) {
-        catService.updateCat(id, cat);
+    public void updateCat(@PathVariable("id") int id, @RequestBody CatDto cat, Principal principal) {
+        catService.updateCat(id, cat, principal.getName());
     }
 
     @DeleteMapping("/{id}")

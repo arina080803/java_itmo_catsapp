@@ -27,7 +27,7 @@ public class OwnerController {
         return ownerService.getOwnerById(id);
     }
 
-    @PostMapping("/add")
+    @PostMapping("")
     public void addOwner(@RequestBody OwnerDto ownerDto) {
         ownerService.addOwner(ownerDto);
     }
