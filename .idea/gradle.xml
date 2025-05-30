@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Lab2" />
+            <option value="$PROJECT_DIR$/Lab2/Controller" />
+            <option value="$PROJECT_DIR$/Lab2/DAO" />
+            <option value="$PROJECT_DIR$/Lab2/Service" />
+            <option value="$PROJECT_DIR$/Lab5" />
+            <option value="$PROJECT_DIR$/Lab5/CatService" />
+            <option value="$PROJECT_DIR$/Lab5/CatsMicroservice" />
+            <option value="$PROJECT_DIR$/Lab5/CatsMicroservice/CatClient" />
+            <option value="$PROJECT_DIR$/Lab5/CatsMicroservice/CatController" />
+            <option value="$PROJECT_DIR$/Lab5/OwnerMicroservice" />
+            <option value="$PROJECT_DIR$/Lab5/OwnerMicroservice/OwnerClient" />
+            <option value="$PROJECT_DIR$/Lab5/OwnerMicroservice/OwnerController" />
+            <option value="$PROJECT_DIR$/Lab5/OwnerService" />
+            <option value="$PROJECT_DIR$/Lab5/UserMicroservice" />
+            <option value="$PROJECT_DIR$/Lab5/UserService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.test" />
+        <module name="java_itmo_catsapp.Lab5.UserMicroservice.test" />
+        <module name="java_itmo_catsapp.Lab2.DAO.test" />
+        <module name="java_itmo_catsapp.Lab2.DAO.main" />
+        <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.main" />
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.test" />
+        <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerController.test" />
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.main" />
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatController.main" />
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.main" />
+        <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatController.test" />
+        <module name="java_itmo_catsapp.Lab2.Service.main" />
+        <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerController.main" />
+        <module name="java_itmo_catsapp.Lab2.Service.test" />
+        <module name="java_itmo_catsapp.Lab5.UserMicroservice.main" />
+        <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="21" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="java_itmo_catsapp.Lab2.DAO" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab2.DAO.main" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab2.DAO.test" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab2.Service" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab2.Service.main" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab2.Service.test" options="-Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatClient" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.test" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatController" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatController.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.CatController.test" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.CatsMicroservice.test" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.test" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerController" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerController.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerController.test" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.UserMicroservice" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.UserMicroservice.main" options="-parameters -Xlint:-processing" />
+      <module name="java_itmo_catsapp.Lab5.UserMicroservice.test" options="-parameters -Xlint:-processing" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab2/DAO/java_itmo_catsapp.Lab2.DAO.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab2/DAO/java_itmo_catsapp.Lab2.DAO.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab2/Service/java_itmo_catsapp.Lab2.Service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab2/Service/java_itmo_catsapp.Lab2.Service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab5/CatsMicroservice/CatClient/java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab5/CatsMicroservice/CatClient/java_itmo_catsapp.Lab5.CatsMicroservice.CatClient.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab5/CatsMicroservice/java_itmo_catsapp.Lab5.CatsMicroservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab5/CatsMicroservice/java_itmo_catsapp.Lab5.CatsMicroservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab5/OwnerMicroservice/OwnerClient/java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab5/OwnerMicroservice/OwnerClient/java_itmo_catsapp.Lab5.OwnerMicroservice.OwnerClient.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lab5/UserMicroservice/java_itmo_catsapp.Lab5.UserMicroservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Lab5/UserMicroservice/java_itmo_catsapp.Lab5.UserMicroservice.main.iml" />
+    </modules>
+  </component>
+</project>
