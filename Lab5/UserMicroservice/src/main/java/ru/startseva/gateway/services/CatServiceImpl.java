@@ -3,8 +3,10 @@ package ru.startseva.gateway.services;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import ru.startseva.CatClient;
 import ru.startseva.dtos.CatColor;
 import ru.startseva.dtos.CatDto;
@@ -74,15 +76,27 @@ public class CatServiceImpl implements CatService {
 
   @Override
   @Transactional
-  public void updateCat(int id, CatDto catDto) {
+  public void updateCat(int id, CatDto catDto, String username) {
+    CatDto cat = catClient.getCatById(Integer.toString(id));
+    User user = userRepository.findByUsername(username);
+    if (cat != null && cat.getOwner() != user.getOwner()) {
+      throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+    }
+
     catDto.setCatID(id);
     catKafkaTemplate.send("update_cat", catDto);
   }
 
   @Override
   @Transactional
-  public void deleteCat(int id) {
-    CatDto cat = new CatDto();
+  public void deleteCat(int id, String username) {
+    CatDto cat = catClient.getCatById(Integer.toString(id));
+    User user = userRepository.findByUsername(username);
+    if (cat != null && cat.getOwner() != user.getOwner()) {
+      throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+    }
+
+    cat = new CatDto();
     cat.setCatID(id);
     catKafkaTemplate.send("delete_cat", cat);
   }

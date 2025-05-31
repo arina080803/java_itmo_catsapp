@@ -23,9 +23,8 @@ public class CatController {
       @RequestParam(value = "color", required = false) CatColor color, Principal principal) {
     if (color != null) {
       return catService.getCatsByColor(color, principal.getName());
-    } else {
-      return catService.getAllCats(principal.getName());
     }
+    return catService.getAllCats(principal.getName());
   }
 
   @GetMapping("/{id}")
@@ -39,13 +38,13 @@ public class CatController {
   }
 
   @PutMapping("/{id}")
-  public void updateCat(@PathVariable("id") int id, @RequestBody CatDto catDto) {
-    catService.updateCat(id, catDto);
+  public void updateCat(@PathVariable("id") int id, @RequestBody CatDto catDto, Principal principal) {
+    catService.updateCat(id, catDto, principal.getName());
   }
 
   @DeleteMapping("/{id}")
-  public void deleteCat(@PathVariable("id") int catId) {
-    catService.deleteCat(catId);
+  public void deleteCat(@PathVariable("id") int catId, Principal principal) {
+    catService.deleteCat(catId, principal.getName());
   }
 
   @PostMapping("/{id}/friend")
